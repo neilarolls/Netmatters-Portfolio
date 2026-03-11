@@ -74,8 +74,8 @@
                     position: fixed;
                     width: #{$Menu-width};
                     height: min-content;
-                    border-top: 2px solid #{$bm-highlight};
-                    border-bottom: 2px solid #{$bm-shadow};
+                    border-top: 2px solid transparent;
+                    border-bottom: 2px solid transparent;
                     text-align: center;
                     left: calc(-#{$Menu-width} - 5px);
                     color:#{$bm-text-main};
@@ -230,8 +230,8 @@
                     }
 
                     @media (min-width: 768px) {
-                        font-size: 1.25rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 27px);
+                        font-size: 1.21rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 25px);
                     }
 
                     @media (min-height: 500px) {
