@@ -1,0 +1,39 @@
+// Burger Menu variables
+
+$burger-v-offset: calc(100vh / 6);      // Distance from top of viewport to first item.
+$burger-height-factor: 8.4;            // Adjusts the height of the menu boxes relative to the spacing, higher values give smaller boxes.
+                                        // Decreasing this value below the gap factor will cause the menu boxes to overlap.
+$burger-spacing-factor: 8.1;            // Decrease this value to increase the gap between menu boxes. Should be less than the height factor.
+$Menu-width: 150px;                     // Menu box width.
+$burger-button-position: "left";        // "left" and "right" are currently the only valid values [no quotes].
+$bm-box-radius: 0.2rem;
+$bm-btn-radius: 0.4rem;
+$bm-side-gap: 1px;                      // Sets the gap, if desired, to the left hand edge of the screen.
+
+    // colours
+
+$bm-main-background: #c77b23;
+$bm-bg-emphasise: #d28824;
+$bm-text-main: #dcd1c3ff;
+$bm-text-initials: #ffe0af;
+$bm-item-border: #44444444;
+$bm-highlight: #d3944b88;
+$bm-shadow: #a9692488;
+$bm-mid-shadow: #b2703988;
+$bm-btn-border: #d6d3c1e6;
+$bm-btn-glow: #ffffff88;
+
+// Projects Page
+
+$prj-card-width: 200px;
+$prj-card-height: 164px;
+$prj-card-height-ratio: 0.82;
+$prj-card-img-height-ratio: 0.696;
+
+
+    // colours
+
+$prj-card-bg: #f8f8ff;
+$prj-card-text: #222255ff;
+$prj-card-border: #d3d3d3;
+$prj-page-bg: rgb(20, 20, 35);

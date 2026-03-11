@@ -1,0 +1,202 @@
+.prj-top {
+    z-index: 0;
+    background-color: #{$prj-page-bg};
+
+    .prj-v-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .prj-h-wrapper {
+            padding: 50px 20px 60px;
+            margin: 0 auto;
+
+            .prj-cards {
+
+                // [class*=prj-card-] {
+                //     transition: all 2s linear;
+                // }
+
+                .prj-card-1, .prj-card-3, .prj-card-5 {
+                    display: inline-flex;
+                    width: 100%;
+                    justify-content: start;
+
+                }
+                
+
+                .prj-card-2, .prj-card-4, .prj-card-6 {
+                    display: inline-flex;
+                    width: 100%;
+                    justify-content: end;
+                }
+
+                @media (min-width: 480px) {
+
+                    .prj-card-1, .prj-card-3, .prj-card-5 {
+                        width: #{$prj-card-width};
+
+                    }
+
+                    .prj-card-2, .prj-card-4, .prj-card-6 {
+                        width: #{$prj-card-width};
+                        padding-left: 20px;
+                    }
+
+                }
+
+                @media (min-width: 576px) {
+                    max-width: 500px;
+                }
+
+                @media (min-width: 768px) {
+                    max-width: 750px;
+
+                    .prj-card-1 {
+                        padding-left: 50px;
+                    }
+
+                    .prj-card-3 {
+                        padding-left: 10px;
+                    }
+
+                    .prj-card-4 {
+                        padding-right: 10px;
+                    }
+
+                    .prj-card-6 {
+                        padding-right: 50px;
+                    }
+                }
+                
+                @media (min-width: 992px) {
+                    max-width: 970px;
+
+                    .prj-card-1 {
+                        padding-right: 20px;
+                        padding-left: 140px;
+                    }
+
+                    .prj-card-2 {
+                        padding-right: 10px;
+                        padding-left: 35px;
+                    }
+
+                    .prj-card-3 {
+                        padding-right: 0px;
+                        padding-left: 35px;
+                    }
+
+                    .prj-card-4 {
+                        padding-left: 0px;
+                        padding-right: 35px;
+                    }
+
+                    .prj-card-5 {
+                        padding-left: 10px;
+                        padding-right: 35px;
+                    }
+
+                    .prj-card-6 {
+                        padding-left: 20px;
+                        padding-right: 140px;
+                    }
+                }
+
+                @media (min-width: 1200px) {
+                    max-width: 1170px;
+
+                    .prj-card-1 {
+                        padding-right: 30px;
+                        padding-left: 260px;
+                    }
+
+                    .prj-card-2 {
+                        padding-right: 20px;
+                        padding-left: 35px;
+                    }
+
+                    .prj-card-3 {
+                        padding-right: 0px;
+                        padding-left: 35px;
+                    }
+
+                    .prj-card-4 {
+                        padding-left: 0px;
+                        padding-right: 35px;
+                    }
+
+                    .prj-card-5 {
+                        padding-left: 20px;
+                        padding-right: 35px;
+                    }
+
+                    .prj-card-6 {
+                        padding-left: 30px;
+                        padding-right: 260px;
+                    }
+                }
+
+                > div {
+                    // z-index: 0;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100vw;
+
+                    .prj-card-data {
+                        // z-index: 0;
+                        width: #{$prj-card-width};
+                        height: #{$prj-card-height};
+                        font-family: "roboto", sans-serif;
+                        border: 0.1rem solid #{$prj-card-border};
+                        background-color: #{$prj-card-bg};
+                        color: #{$prj-card-text};
+                        margin-top: 1rem;
+                        padding: 0.05rem;
+                        border-radius: 0.2rem;
+
+                        img {
+                            // z-index: 0;
+                            width: #{$prj-card-width};
+                            height: calc(#{$prj-card-img-height-ratio} * #{$prj-card-width});
+                            border-bottom: 0.05rem solid #{$prj-card-text};
+
+                        }
+
+                        div {
+                            // z-index: 0;
+                            max-height: 2rem;
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            align-content: center;
+                            
+
+                            div {
+                                z-index: 0;
+                                font-weight: 450;
+                                padding-left: 0.35rem;
+                                width: fit-content;
+                                display: inline-block;
+                                height: 1.2rem;
+                                line-height: 1.2;
+                            }
+
+                            a {
+                                // z-index: 0;
+                                font-size: 0.8rem;
+                                font-weight: 350;
+                                width: fit-content;
+                                display: inline-block;
+                                position: relative;
+                                right: -24px;
+                                padding-top: 3px;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

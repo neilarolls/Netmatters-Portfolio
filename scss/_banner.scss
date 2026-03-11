@@ -1,5 +1,81 @@
 .banner-top {
-    height: 100vh;
-    width: calc(100vh * 1.77px);
-    background-image: url(../img/background-pexels-felix-mittermeier-956981.jpg);
+
+    .banner-v-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100vh;
+        background-image: url(../img/background-pexels-felix-mittermeier-956981.jpg);
+        background-size: cover;
+        background-position: center;
+        border: 0.1rem solid #101020;
+        box-shadow: inset 0 0 1rem 1rem #10102088;
+
+        .banner-h-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+
+            .banner-text {
+                font-family: "roboto", sans-serif;
+                margin: 0; 
+                color: white;
+                text-align: center;
+                letter-spacing: 0.05rem;
+
+                .banner-title {
+                    transition: font-size 0.05s linear;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    margin-bottom: -0.1rem;
+                }
+
+                .banner-name {
+                    transition: font-size 0.05s linear;
+                    font-size: 1.75rem;
+                    font-weight: 500;
+                }
+
+                .banner-profession {
+                    transition: font-size 0.05s linear;
+                    padding-top: 0.25rem;
+                    font-size: 0.75rem;
+                    font-weight: 300;
+                    border-top: 0.05rem solid;
+                }
+
+                @media (min-width: 576px) {
+
+                    .banner-title {
+                        font-size: 1.6rem;
+                    }
+
+                    .banner-name {
+                        font-size: 3.5rem;
+                    }
+                    
+                    .banner-profession {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                @media (min-width: 768px) {
+
+                    .banner-title {
+                        font-size: 2.8rem;
+                    }
+
+                    .banner-name {
+                        font-size: 6.125rem;
+                    }
+                    
+                    .banner-profession {
+                        font-size: 2.625rem;
+                    }
+                }
+
+            }
+        }
+
+    }
 }

@@ -1,0 +1,380 @@
+.burger-top {
+
+    .burger-button {
+        position: fixed;
+        left: 0;
+        top: 0;
+        // background-color: transparent;
+        padding: 0;
+        border: 0;
+
+        .burger-bar {
+            transition: (box-shadow, border) 0.3s linear; 
+            position: fixed;
+            width: 3.75rem;
+            height: 2.75rem;
+            #{$burger-button-position}: 0.1rem;
+            top: 0.1rem;
+            background-color: transparent;
+            border: 0.125rem solid #{$bm-btn-border};
+            border-radius: #{$bm-btn-radius};
+
+
+            div {
+                transition: (box-shadow, border) 0.3s linear; 
+                position: fixed;
+                width: 2.5rem;
+                #{$burger-button-position}: 0.62rem;            // Change button to 'left' or 'right' in _variables.scss
+                top: 0.625rem;
+                background-color: transparent;
+                border: 0.225rem solid #{$bm-btn-border};
+            }
+
+            .burger-bar-middle {
+                top: 1.375rem;
+            }
+
+            .burger-bar-bottom {
+                top: 2.125rem;
+            }
+        }
+
+        .burger-bar:hover {
+            box-shadow: 0 0 1rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
+            border-color: rgb(255, 253, 236);
+
+            div {
+                box-shadow: 0 0 0.5rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
+                border-color: rgb(255, 253, 236);
+            }
+        }
+
+        .burger-menu-top {
+
+            .burger-menu-wrapper {
+
+                // set defaults
+                div {
+                    z-index: 2;
+                    font-family: "roboto", sans-serif;
+                    font-weight: 270;
+                    position: fixed;
+                    width: #{$Menu-width};
+                    background-color: #{$bm-main-background};
+                    left: calc(-#{$Menu-width} - 5px);
+                    border-radius: #{$bm-box-radius};
+                    border: 0.05rem solid #{$bm-item-border};
+                }
+
+                a {
+                    z-index: 2;
+                    font-family: "roboto", sans-serif;
+                    font-weight: 270;
+                    font-size: 1rem;
+                    position: fixed;
+                    width: #{$Menu-width};
+                    height: min-content;
+                    border-top: 2px solid #{$bm-highlight};
+                    border-bottom: 2px solid #{$bm-shadow};
+                    text-align: center;
+                    left: calc(-#{$Menu-width} - 5px);
+                    color:#{$bm-text-main};
+                    text-decoration: none;
+                }
+
+                .menu-initials {
+                    z-index: 2;
+                    font-family: "roboto", sans-serif;
+                    font-weight: 700;
+                    font-size: 2.8rem;
+                    width: #{$Menu-width};
+                    height: 3.125rem;
+                    border-top: 3px solid #{$bm-highlight};
+                    border-bottom: 3px solid #{$bm-shadow};
+                    text-align: center;
+                    color:#{$bm-text-initials};
+                    background-color: #{$bm-bg-emphasise};
+                }
+
+
+
+
+                // Specifies heights, positions and transitions.
+                // Variable functions described in _variables.scss file
+
+                :nth-child(1) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} - 30px);
+                    height: calc((100% / #{$burger-height-factor}) + 30px);
+                }
+
+                :nth-child(2) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 42px);
+
+                    @media (min-width: 576px) {
+                        font-weight: 850;
+                    }
+
+                    @media (min-width: 768px) {
+                        padding-bottom: 0.6rem;
+                        font-size: 3.25rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 45px);
+                    }
+
+                    @media (min-width: 992px) {
+                        padding-bottom: 1.2rem;
+                        font-size: 3.7rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 48px);
+                    }
+
+                    @media (min-width: 1200px) {
+                        padding-bottom: 1.6rem;
+                        font-size: 4.15rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 52px);
+                    }
+
+                }
+
+                :nth-child(3) {
+                    // transition: left 0.1s linear;                    
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor})));
+                    height: calc(100% / #{$burger-height-factor});
+
+                    &:hover {
+
+                        & + a {
+                            color: white;
+                        }
+                    }
+                }
+
+                :nth-child(4) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2) - ((100% / #{$burger-height-factor}) / 2) - 12px);
+
+                    @media (min-width: 576px) {
+                        font-weight: 450;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 1.25rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2) - ((100% / #{$burger-height-factor}) / 2) - 16px);
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+
+                    @media (min-height: 500px) {
+                        font-weight: 450;
+                    }
+
+                }
+
+                :nth-child(5) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2));
+                    height: calc(100% / #{$burger-height-factor});
+                }
+
+                :nth-child(6) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3) - ((100% / #{$burger-height-factor}) / 2) - 12px);
+
+                    @media (min-width: 576px) {
+                        font-weight: 450;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 1.25rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3) - ((100% / #{$burger-height-factor}) / 2) - 16px);
+                    }
+
+                    @media (min-height: 500px) {
+                        font-weight: 450;
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                :nth-child(7) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3));
+                    height: calc(100% / #{$burger-height-factor});
+
+                    &:hover {
+
+                        & + a {
+                            color: white;
+                        }
+                    }
+                }
+
+                :nth-child(8) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 12px);
+                    
+                    @media (min-width: 576px) {
+                        font-weight: 450;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 1.25rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 27px);
+                    }
+
+                    @media (min-height: 500px) {
+                        font-weight: 450;
+                    }
+                    
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                :nth-child(9) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4));
+                    height: calc(100% / #{$burger-height-factor});
+
+                    &:hover {
+                        & + a {
+                            color: white;
+                        }
+                    }
+                }
+
+                :nth-child(10) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) - ((100% / #{$burger-height-factor}) / 2) - 12px);
+
+                    @media (min-width: 576px) {
+                        font-weight: 450;
+                    }
+
+                    @media (min-height: 500px) {
+                        font-weight: 450;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 1.25rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) - ((100% / #{$burger-height-factor}) / 2) - 16px);
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                :nth-child(11) {
+                    // transition: left 0.1s linear;
+                    z-index: 2;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5));
+                    height: calc((100% / #{$burger-height-factor}) * 1.5);
+
+                    &:hover {
+
+                        & + div {
+                            color: white;
+                        }
+                    }
+                }
+                
+                :nth-child(12) {
+                    z-index: 2;
+                    margin: 0;
+                    position: fixed;
+                    border-color: transparent;
+                    background-color: transparent;
+                    color: #{$bm-text-main};
+                    top: calc(#{$burger-v-offset} + (( 100% / #{$burger-spacing-factor}) * 5) + 0.25rem + (1.2rem * ((100vh - 280px) / 500px)));
+                    // transition: left 0.1s linear;
+                    height: min-content;
+                    width: #{$Menu-width};
+                    left: calc(-#{$Menu-width} - 5px);
+
+                    strong {
+                        z-index: 2;
+                        top: calc(#{$burger-v-offset} + (( 100% / #{$burger-spacing-factor}) * 5) + 0.25rem + (1.2rem * ((100vh - 280px) / 500px)));
+                        // transition: left 0.1s linear;
+                        position: fixed;
+                        font-family: "roboto", sans-serif;
+                        font-weight: 400;
+                        font-size: 0.9rem;
+                        left: calc(-#{$Menu-width} - 5px);
+                    }
+
+                    @media (min-width: 576px) {
+
+                        strong {
+                            font-weight: 550;
+                        }
+                    }
+
+                    @media (min-width: 768px) {
+
+                        strong {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+
+                :nth-child(13) {
+                    z-index: 2;
+                    display: flex;
+                    align-items: center;
+                    border-color: transparent;
+                    background-color: transparent;
+                    height: 32px;
+                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) + 1.1rem + (1.75rem * ((100vh - 280px) / 370px)));
+                    // transition: left 0.1s linear;
+                    width: calc(#{$Menu-width} - 1.25rem);
+                    padding-left: 0.625rem;
+                    opacity: 85%;
+
+
+                }
+            }
+        }
+
+        &:hover {
+
+            .burger-menu-wrapper {
+
+                    div, a {
+                        left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
+                    }
+
+                    :nth-child(12) {
+                        left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
+
+                        strong {
+                            left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
+
+                            @media (min-width: 768px) {
+                                left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
+                            }
+                        }
+                    }
+
+                    :nth-child(13) {
+                        left: calc(2px + #{$bm-side-gap});
+                    }
+            }
+        }
+
+    }
+}
