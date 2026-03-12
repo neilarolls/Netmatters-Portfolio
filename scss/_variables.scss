@@ -8,10 +8,11 @@ $burger-height-factor: 8.4;            // Adjusts the height of the menu boxes r
                                         // Decreasing this value below the gap factor will cause the menu boxes to overlap.
 $burger-spacing-factor: 8.45;            // Decrease this value to increase the gap between menu boxes. Should be less than the height factor.
 $Menu-width: 150px;                     // Menu box width.
-$burger-button-position: "left";        // "left" and "right" are currently the only valid values [no quotes].
+$burger-button-position: "right";        // "left" and "right" are currently the only valid values [no quotes].
 $bm-box-radius: 0.2rem;
 $bm-btn-radius: 0.4rem;
-$bm-side-gap: 1px;                      // Sets the gap, if desired, to the left hand edge of the screen.
+$bm-side-gap: 0px;                      // Sets the gap, if desired, to the left hand edge of the screen.
+$bm-menu-mode: "block";
 
     // colours
 

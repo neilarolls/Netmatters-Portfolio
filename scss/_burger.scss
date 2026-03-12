@@ -40,12 +40,15 @@
         }
 
         .burger-bar:hover {
-            box-shadow: 0 0 1rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
-            border-color: rgb(255, 253, 236);
 
-            div {
-                box-shadow: 0 0 0.5rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
+            @media (max-width: 575.999px) {
+                box-shadow: 0 0 1rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
                 border-color: rgb(255, 253, 236);
+
+                div {
+                    box-shadow: 0 0 0.5rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
+                    border-color: rgb(255, 253, 236);
+                }
             }
         }
 
@@ -55,18 +58,20 @@
 
                 // set defaults
                 div {
+                    display: #{$bm-menu-mode};
                     z-index: 2;
                     font-family: "roboto", sans-serif;
                     font-weight: 270;
                     position: fixed;
                     width: #{$Menu-width};
                     background-color: #{$bm-main-background};
-                    left: calc(-#{$Menu-width} - 5px);
+                    // left: calc(-#{$Menu-width} - 5px);
                     border-radius: #{$bm-box-radius};
                     border: 0.05rem solid #{$bm-item-border};
                 }
 
                 a {
+                    display: #{$bm-menu-mode};
                     z-index: 2;
                     font-family: "roboto", sans-serif;
                     font-weight: 270;
@@ -77,12 +82,13 @@
                     border-top: 2px solid transparent;
                     border-bottom: 2px solid transparent;
                     text-align: center;
-                    left: calc(-#{$Menu-width} - 5px);
+                    // left: calc(-#{$Menu-width} - 5px);
                     color:#{$bm-text-main};
                     text-decoration: none;
                 }
 
                 .menu-initials {
+                    display: #{$bm-menu-mode};
                     z-index: 2;
                     font-family: "roboto", sans-serif;
                     font-weight: 700;
@@ -94,6 +100,10 @@
                     text-align: center;
                     color:#{$bm-text-initials};
                     background-color: #{$bm-bg-emphasise};
+                }
+
+                h4 {
+                    display: #{$bm-menu-mode};
                 }
 
 
@@ -294,6 +304,7 @@
                 }
                 
                 :nth-child(12) {
+                    left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
                     z-index: 2;
                     margin: 0;
                     position: fixed;
@@ -304,7 +315,7 @@
                     // transition: left 0.1s linear;
                     height: min-content;
                     width: #{$Menu-width};
-                    left: calc(-#{$Menu-width} - 5px);
+                    // left: calc(-#{$Menu-width} - 5px);
 
                     strong {
                         z-index: 2;
@@ -314,7 +325,13 @@
                         font-family: "roboto", sans-serif;
                         font-weight: 400;
                         font-size: 0.9rem;
-                        left: calc(-#{$Menu-width} - 5px);
+                        // left: calc(-#{$Menu-width} - 5px);
+
+                        left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
+
+                        @media (min-width: 768px) {
+                            left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
+                        }
                     }
 
                     @media (min-width: 576px) {
@@ -344,35 +361,75 @@
                     width: calc(#{$Menu-width} - 1.25rem);
                     padding-left: 0.625rem;
                     opacity: 85%;
+                    left: #{$bm-side-gap};
 
 
                 }
             }
         }
 
-        &:hover {
+        &:hover {        
+
+            .burger-menu-wrapper {
+                display: block;
+
+            //     div, a {
+            //         left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
+            //     }
+
+            //     :nth-child(12) {
+            //         left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
+
+            //         strong {
+            //             left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
+
+            //             @media (min-width: 768px) {
+            //                 left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
+            //             }
+            //         }
+            //     }
+
+            //     :nth-child(13) {
+            //         left: calc(2px + #{$bm-side-gap});
+            //     }
+            }
+        }
+        
+
+
+        @media (max-width: 575.999px) {
+
+            .burger-menu-wrapper {
+                    display: none;
+            }
+
+            #{$bm-menu-mode}: none;
+        }
+
+        @media (min-width: 576px) {
 
             .burger-menu-wrapper {
 
-                    div, a {
-                        left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
-                    }
+                div, a {
+                    left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
+                }
 
-                    :nth-child(12) {
-                        left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
+                :nth-child(12) {
+                    left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
 
-                        strong {
-                            left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
+                    strong {
+                        left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
 
-                            @media (min-width: 768px) {
-                                left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
-                            }
+                        @media (min-width: 768px) {
+                            left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
                         }
                     }
+                }
 
-                    :nth-child(13) {
-                        left: calc(2px + #{$bm-side-gap});
-                    }
+                :nth-child(13) {
+                    left: calc(2px + #{$bm-side-gap});
+                }
+
             }
         }
 
