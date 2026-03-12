@@ -1,6 +1,6 @@
 .cform-top {
     width: 100vw;
-    height:150vh;
+    height: fit-content;
     background: linear-gradient(to top left, #{$form-bg-colour-3}, #{$form-bg-colour-2} 50%, #{$form-bg-colour-1} 100%);
     padding: 1.5rem 0;
 
@@ -11,7 +11,7 @@
             
             .cform-sections {
 
-                * {
+                > * {
                     margin-block-end: 0;
                     margin-block-start: 0;
                     margin-inline-start: 0;
@@ -20,34 +20,38 @@
                     border: none;
                     margin: 0 auto;
                     color: #{$form-text-colour};
+                    width: 280px;
                 }
 
                 .cform-git {
+                        text-align: center;
 
                     h3 {
                         text-align: center;
-                        width:80%;
                         padding-bottom: 1.2rem;
                     }
 
                     p {
                         text-align: center;
-                        width: 80%;
                         padding-bottom: 1rem;
                         font-size: 0.85rem;
                     }
 
                 }
 
-                .cform-git-details {
+                .cform-git-details {                    
+                        text-align: center;
+
+                    > * {
+                        text-align: center;
+                    }
+
                     h5 {
                         position: relative;
                         width: 80%;
                         display: inline-block;
                         font-size: 0.85rem;
-                        text-align: center;
                         padding-bottom: 1.5rem;
-                        left: 1.5rem;
 
                         img {
                             position: relative;
@@ -57,11 +61,11 @@
                         }
                     }
 
-                    p {
-                        text-align: center;
+                    div {
                         width: 80%;
                         padding-bottom: 1.5rem;
                         font-size: 0.85rem;
+                        margin: 0 auto;
                     }
                 }
 
