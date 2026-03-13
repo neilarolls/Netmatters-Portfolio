@@ -247,8 +247,8 @@
                     }
 
                     @media (min-width: 768px) {
-                        font-size: 1.21rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 25px);
+                        font-size: 1.15rem;
+                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 13px);
                     }
 
                     @media (min-height: 500px) {

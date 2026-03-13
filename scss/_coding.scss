@@ -7,11 +7,22 @@
     .coding-v-wrapper {
         .coding-h-wrapper {
             .coding-uc {
+                display: flex;
+                flex-direction: column;
+                height: 60vh;
+
+                @media (min-width: 576px) {
+                    padding-left: 150px;
+
+                    .coding-headline-wrapper {
+                        padding-top: 2rem;
+                    }
+                }
 
                 .coding-headline-wrapper {
                     text-align: center;
                     width: 90%;
-                    padding-top: 1.25rem;
+                    padding-top: 4rem;
                     margin: 0 auto;
                 
                     #coding-uc-headline {
@@ -27,8 +38,9 @@
                     width: 60%;
                     padding-top: 0.75rem;
                     margin: 0 auto;
+                    font-weight: 450;
                 
-                    #coding-uc-headline {
+                    #coding-uc-details {
                         height: fit-content;
                         background-color: transparent;
                         color: #{$prj-card-text};
