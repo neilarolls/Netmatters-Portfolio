@@ -39,6 +39,13 @@
             }
         }
 
+        @media (min-width: 576px) {
+
+            .burger-bar {
+                display: none;
+            }
+        }
+
         .burger-bar:hover {
 
             @media (max-width: 575.999px) {

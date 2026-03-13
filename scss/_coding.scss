@@ -1,0 +1,57 @@
+.coding-top {
+    width: 100vw;
+    height: 150vh;
+    background: linear-gradient(to top left, #{$form-bg-colour-3}, #{$form-bg-colour-2} 50%, #{$form-bg-colour-1} 100%);
+    font-family: "roboto", sans-serif;
+
+    .coding-v-wrapper {
+        .coding-h-wrapper {
+            .coding-uc {
+
+                .coding-headline-wrapper {
+                    text-align: center;
+                    width: 90%;
+                    padding-top: 1.25rem;
+                    margin: 0 auto;
+                
+                    #coding-uc-headline {
+                        height: fit-content;
+                        background-color: transparent;
+                        color: #{$prj-card-text};
+                    }
+                }
+
+                .coding-details-wrapper {
+                    font-size: 1.25rem;
+                    text-align: center;
+                    width: 60%;
+                    padding-top: 0.75rem;
+                    margin: 0 auto;
+                
+                    #coding-uc-headline {
+                        height: fit-content;
+                        background-color: transparent;
+                        color: #{$prj-card-text};
+                    }
+                }
+
+                .coding-button-wrapper {
+                    padding-top: 1.25rem;
+                    text-align: center;
+
+                    a {
+                        width: 8rem;
+                        height: 2.5rem;
+                        background-color: white;
+                        border-radius: 0.5rem;
+                        border: 0.09rem solid #{$form-input-border-colour};
+                        font-size: 1.75rem;
+                        padding-top: 0.5rem;
+                        text-decoration: none;                        
+                        color: #{$prj-card-text};
+                    }
+                }
+            }
+        }
+    }
+}

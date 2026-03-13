@@ -11,7 +11,47 @@
             padding: 50px 20px 60px;
             margin: 0 auto;
 
+            #page-turner-3 {
+
+                a {
+                    position: absolute;
+                    display: block;
+                    color: white;
+                    left: calc(50vw - 1.25rem);
+
+                    img {
+                        position: relative;
+                        width: 2.5rem;
+                        text-decoration: none;
+                        top: -3.1rem;
+                        opacity: #{$next-prev-opacity};
+                    }
+
+                }
+
+            }
+
+            #page-turner-2 {
+
+                a {
+                    position: absolute;
+                    display: block;
+                    color: white;
+                    left: calc(50vw - 1.25rem);
+
+                    img {
+                        width: 2.5rem;
+                        text-decoration: none;
+                        opacity: #{$next-prev-opacity};
+                    }
+
+                }
+
+            }
+
             .prj-cards {
+
+                margin-bottom: 2rem;
 
                 // [class*=prj-card-] {
                 //     transition: all 2s linear;
