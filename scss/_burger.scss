@@ -8,7 +8,7 @@
         padding: 0;
         border: 0;
 
-        .burger-bar {
+        .burger-bar {                                           // Set up Burger Button
             transition: (box-shadow, border) 0.3s linear; 
             position: fixed;
             width: 3.75rem;
@@ -19,9 +19,8 @@
             border: 0.125rem solid #{$bm-btn-border};
             border-radius: #{$bm-btn-radius};
 
-
             div {
-                transition: (box-shadow, border) 0.3s linear; 
+                transition: (box-shadow, border) 0.3s linear;
                 position: fixed;
                 width: 2.5rem;
                 #{$burger-button-position}: 0.62rem;            // Change button to 'left' or 'right' in _variables.scss
@@ -39,14 +38,14 @@
             }
         }
 
-        @media (min-width: 576px) {
+        @media (min-width: 576px) {                             // Hide button when menu is on display
 
             .burger-bar {
                 display: none;
             }
         }
 
-        .burger-bar:hover {
+        .burger-bar:hover {                                     // Glows when hovered over
 
             @media (max-width: 575.999px) {
                 box-shadow: 0 0 1rem #{$bm-btn-glow}, inset 0 0 0.5rem #{$bm-btn-glow};
@@ -63,380 +62,594 @@
 
             .burger-menu-wrapper {
 
-                // set defaults
-                div {
-                    display: #{$bm-menu-mode};
-                    z-index: 2;
-                    font-family: "roboto", sans-serif;
-                    font-weight: 270;
+                > div {                                             // set menu item defaults
                     position: fixed;
-                    width: #{$Menu-width};
                     background-color: #{$bm-main-background};
-                    // left: calc(-#{$Menu-width} - 5px);
                     border-radius: #{$bm-box-radius};
-                    border: 0.05rem solid #{$bm-item-border};
+
+                    @media (max-width: 1199.99px) {
+                        width: 150px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        width: 300px;
+                    }
                 }
 
-                a {
+                a {                                                 // set menu item defaults
                     display: #{$bm-menu-mode};
                     z-index: 2;
                     font-family: "roboto", sans-serif;
-                    font-weight: 270;
-                    font-size: 1rem;
+                    font-weight: 350;
+                    font-size: 1.25rem;
                     position: fixed;
-                    width: #{$Menu-width};
                     height: min-content;
-                    border-top: 2px solid transparent;
-                    border-bottom: 2px solid transparent;
                     text-align: center;
-                    // left: calc(-#{$Menu-width} - 5px);
                     color:#{$bm-text-main};
                     text-decoration: none;
                 }
 
-                .menu-initials {
-                    display: #{$bm-menu-mode};
-                    z-index: 2;
-                    font-family: "roboto", sans-serif;
-                    font-weight: 700;
-                    font-size: 2.8rem;
-                    width: #{$Menu-width};
-                    height: 3.125rem;
-                    border-top: 3px solid #{$bm-highlight};
-                    border-bottom: 3px solid #{$bm-shadow};
-                    text-align: center;
-                    color:#{$bm-text-initials};
-                    background-color: #{$bm-bg-emphasise};
-                }
-
-                h4 {
-                    display: #{$bm-menu-mode};
-                }
-
-
-
-
-                // Specifies heights, positions and transitions.
+                // Specify heights, positions and responsive behaviours.
                 // Variable functions described in _variables.scss file
 
-                :nth-child(1) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} - 30px);
-                    height: calc((100% / #{$burger-height-factor}) + 30px);
-                }
 
-                :nth-child(2) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 42px);
-
-                    @media (min-width: 576px) {
-                        font-weight: 850;
-                    }
-
-                    @media (min-width: 768px) {
-                        padding-bottom: 0.6rem;
-                        font-size: 3.25rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 45px);
-                    }
-
-                    @media (min-width: 992px) {
-                        padding-bottom: 1.2rem;
-                        font-size: 3.7rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 48px);
-                    }
-
-                    @media (min-width: 1200px) {
-                        padding-bottom: 1.6rem;
-                        font-size: 4.15rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-height-factor}) / 2) - 52px);
-                    }
-
-                }
-
-                :nth-child(3) {
-                    // transition: left 0.1s linear;                    
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor})));
-                    height: calc(100% / #{$burger-height-factor});
-
-                    &:hover {
-
-                        & + a {
-                            color: white;
-                        }
-                    }
-                }
-
-                :nth-child(4) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2) - ((100% / #{$burger-height-factor}) / 2) - 12px);
-
-                    @media (min-width: 576px) {
-                        font-weight: 450;
-                    }
-
-                    @media (min-width: 768px) {
-                        font-size: 1.25rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2) - ((100% / #{$burger-height-factor}) / 2) - 16px);
-                    }
-
-                    &:hover {
-                        color: white;
-                    }
-
-                    @media (min-height: 500px) {
-                        font-weight: 450;
-                    }
-
-                }
-
-                :nth-child(5) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 2));
-                    height: calc(100% / #{$burger-height-factor});
-                }
-
-                :nth-child(6) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3) - ((100% / #{$burger-height-factor}) / 2) - 12px);
-
-                    @media (min-width: 576px) {
-                        font-weight: 450;
-                    }
-
-                    @media (min-width: 768px) {
-                        font-size: 1.25rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3) - ((100% / #{$burger-height-factor}) / 2) - 16px);
-                    }
-
-                    @media (min-height: 500px) {
-                        font-weight: 450;
-                    }
-
-                    &:hover {
-                        color: white;
-                    }
-                }
-
-                :nth-child(7) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 3));
-                    height: calc(100% / #{$burger-height-factor});
-
-                    &:hover {
-
-                        & + a {
-                            color: white;
-                        }
-                    }
-                }
-
-                :nth-child(8) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 12px);
+                :nth-child(1) {                                                                 // My Initials
                     
-                    @media (min-width: 576px) {
-                        font-weight: 450;
+                    // display: none;
+                    height: calc((100vh / #{$burger-height-factor}) * 2);
+                    top: 0;
+
+                    .menu-initials {
+
+                        a {
+                            width: 150px;
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                            }
+
+                            display: #{$bm-menu-mode};
+                            top: calc(100vh / #{$burger-height-factor} - 1.725rem);
+                            z-index: 2;
+                            font-family: "roboto", sans-serif;
+                            font-weight: 700;
+                            font-size: 2.8rem;
+                            height: 3.2rem;
+                            border-top: 0.1875rem solid #{$bm-highlight};
+                            border-bottom: 0.1875rem solid #{$bm-shadow};
+                            color:#{$bm-text-initials};
+                            background-color: #{$bm-bg-emphasise};
+                            text-decoration: none;
+                            color:#{$bm-text-initials};
+                        }
+
+                        @media (min-height: 360px) {
+
+                            a {
+                            font-size: 4.6rem;
+                            height: 5.2rem;
+                            top: calc(100vh / #{$burger-height-factor} - 2.7875rem);
+                            }
+                        }
+
+                        @media (min-height: 720px) {
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+
+                                a {
+                                    font-size: 9rem;
+                                    height: 9.8rem;
+                                    width: 300px;
+                                }
+                            }
+
+                            a {
+                                font-size: 6.4rem;
+                                height: 7rem;
+                                top: calc(100vh / #{$burger-height-factor} - 3.685rem);
+                                padding-bottom: 0.25rem;
+
+                                @media (min-width: 1200px) {
+                                    font-size: 9rem;
+                                    height: 9.8rem;
+                                    top: calc(100vh / #{$burger-height-factor} - 5.085rem);
+                                    width: 300px;
+                                }
+                            }
+                        }
+
+                        @media (min-height: 1080px) {
+
+                            @media (min-width: 1200px) {
+
+                                a {
+                                    font-size: 12rem;
+                                    height: 13rem;
+                                    top: calc(100vh / #{$burger-height-factor} - 6.685rem);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                :nth-child(2) {                                                                 // About Me
+                    // transition: left 0.1s linear;
+                    top: calc((100vh / #{$burger-height-factor}) * 2);
+                    height: calc(100vh / #{$burger-height-factor});
+
+                    a {
+                        display: #{$bm-menu-mode};
+                        width: #{$Menu-width};
+                        top: calc(((100vh / #{$burger-height-factor}) * 2.5) - 0.7187rem);
+                        height: min-content;
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
                     }
 
-                    @media (min-width: 768px) {
-                        font-size: 1.15rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4) - ((100% / #{$burger-height-factor}) / 2) - 13px);
+                    &:hover {
+
+                        a {
+                            color: white;
+                        }
                     }
 
-                    @media (min-height: 500px) {
-                        font-weight: 450;
+
+                    @media (min-height: 360px) {
+
+                        a {
+                            font-size: 1.8rem;
+                            height: 2.2rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 2.5) - 1.1rem);
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                            }
+                        }
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
                     }
+
+                    @media (min-height: 720px) {
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+
+                            a {
+                                font-size: 2.4rem;
+                                height: 2.8rem;
+                                width: 300px;
+                            }
+                        }
+
+                        a {
+                            font-size: 2.35rem;
+                            height: 2.8rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 2.5) - 2.7rem);
+
+                            @media (min-width: 1200px) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 2.5) - 1.4rem);
+                                width: 300px;
+                            }
+                        }
+                    }
+                }
+
+                :nth-child(3) {                                                                 // My Portfolio
+                    // transition: left 0.1s linear;
+                    top: calc((100vh / #{$burger-height-factor}) * 3);
+                    height: calc(100vh / #{$burger-height-factor});
+
+                    a {
+                        display: #{$bm-menu-mode};
+                        width: #{$Menu-width};
+                        top: calc(((100vh / #{$burger-height-factor}) * 3.5) - 0.7187rem);
+                        height: min-content;
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    &:hover {
+
+                        a {
+                            color: white;
+                        }
+                    }
+
+
+                    @media (min-height: 360px) {
+
+                        a {
+                            font-size: 1.65rem;
+                            height: 2.2rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 3.5) - 1.05rem);
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                            }
+                        }
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    @media (min-height: 720px) {
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+
+                            a {
+                                font-size: 2.4rem;
+                                height: 2.8rem;
+                                width: 300px;
+                            }
+                        }
+
+                        a {
+                            font-size: 2.25rem;
+                            height: 2.8rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 3.5) - 2.55rem);
+
+                            @media (min-width: 1200px) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 3.5) - 1.4rem);
+                                width: 300px;
+                            }
+                        }
+                    }
+                }
+
+                :nth-child(4) {                                                                 // Code Examples
+                    // transition: left 0.1s linear;
+                    top: calc((100vh / #{$burger-height-factor}) * 4);
+                    height: calc(100vh / #{$burger-height-factor});
+
+                    a {
+                        display: #{$bm-menu-mode};
+                        width: #{$Menu-width};
+                        top: calc(((100vh / #{$burger-height-factor}) * 4.5) - 0.7187rem);
+                        height: min-content;
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    &:hover {
+
+                        a {
+                            color: white;
+                        }
+                    }
+
+
+                    @media (min-height: 360px) {
+
+                        a {
+                            font-size: 1.65rem;
+                            height: 2.2rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 4.5) - 2rem);
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                                top: calc(((100vh / #{$burger-height-factor}) * 4.5) - 1rem);
+                            }
+                        }
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    @media (min-height: 720px) {
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+
+                            a {
+                                font-size: 2.4rem;
+                                height: 2.8rem;
+                                width: 300px;
+                            }
+                        }
+
+                        a {
+                            font-size: 2.05rem;
+                            height: 2.8rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 4.5) - 2.55rem);
+
+                            @media (min-width: 1200px) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 4.5) - 1.4rem);
+                                width: 300px;
+                            }
+                        }
+                    }
+                }
+
+                :nth-child(5) {                                                                 // SCS Scheme
+                    // transition: left 0.1s linear;
+                    top: calc((100vh / #{$burger-height-factor}) * 5);
+                    height: calc(100vh / #{$burger-height-factor});
+
+                    a {
+                        display: #{$bm-menu-mode};
+                        width: #{$Menu-width};
+                        top: calc(((100vh / #{$burger-height-factor}) * 5.5) - 0.7187rem);
+                        height: min-content;
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    &:hover {
+
+                        a {
+                            color: white;
+                        }
+                    }
+
+
+                    @media (min-height: 360px) {
+
+                        a {
+                            font-size: 1.55rem;
+                            height: 2.2rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 5.5) - 1rem);
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                                // top: calc(((100vh / #{$burger-height-factor}) * 5.5) - 1rem);
+                            }
+                        }
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+                        }
+                    }
+
+                    @media (min-height: 720px) {
+
+                        @media (min-width: 1200px) {
+                            width: 300px;
+
+                            a {
+                                font-size: 2.4rem;
+                                height: 2.8rem;
+                                width: 300px;
+                            }
+                        }
+
+                        a {
+                            font-size: 2.25rem;
+                            height: 2.8rem;
+                            top: calc(((100vh / #{$burger-height-factor}) * 5.5) - 2.5rem);
+
+                            @media (min-width: 1200px) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 5.5) - 1.4rem);
+                                width: 300px;
+                            }
+                        }
+                    }
+                }
+
+                :nth-child(6) {                                                                 // Contact Me
                     
-                    &:hover {
-                        color: white;
-                    }
-                }
+                    // display: none;
+                    height: calc((100vh / #{$burger-height-factor}) * 2);
+                    top: calc(((100vh / #{$burger-height-factor}) * 6));
 
-                :nth-child(9) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 4));
-                    height: calc(100% / #{$burger-height-factor});
+                    :first-child {                                                                  // Contact Me text defaults and responsive behaviour
+                        width: #{$Menu-width};
 
-                    &:hover {
-                        & + a {
-                            color: white;
-                        }
-                    }
-                }
-
-                :nth-child(10) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) - ((100% / #{$burger-height-factor}) / 2) - 12px);
-
-                    @media (min-width: 576px) {
-                        font-weight: 450;
-                    }
-
-                    @media (min-height: 500px) {
-                        font-weight: 450;
-                    }
-
-                    @media (min-width: 768px) {
-                        font-size: 1.25rem;
-                        top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) - ((100% / #{$burger-height-factor}) / 2) - 16px);
-                    }
-
-                    &:hover {
-                        color: white;
-                    }
-                }
-
-                :nth-child(11) {
-                    // transition: left 0.1s linear;
-                    z-index: 2;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5));
-                    height: calc((100% / #{$burger-height-factor}) * 1.5);
-
-                    &:hover {
-
-                        & + div {
-                            color: white;
-                        }
-                    }
-                }
-                
-                :nth-child(12) {
-                    left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
-                    z-index: 2;
-                    margin: 0;
-                    position: fixed;
-                    border-color: transparent;
-                    background-color: transparent;
-                    color: #{$bm-text-main};
-                    top: calc(#{$burger-v-offset} + (( 100% / #{$burger-spacing-factor}) * 5) + 0.25rem + (1.2rem * ((100vh - 280px) / 500px)));
-                    // transition: left 0.1s linear;
-                    height: min-content;
-                    width: #{$Menu-width};
-                    // left: calc(-#{$Menu-width} - 5px);
-
-                    strong {
-                        z-index: 2;
-                        top: calc(#{$burger-v-offset} + (( 100% / #{$burger-spacing-factor}) * 5) + 0.25rem + (1.2rem * ((100vh - 280px) / 500px)));
-                        // transition: left 0.1s linear;
-                        position: fixed;
-                        font-family: "roboto", sans-serif;
-                        font-weight: 400;
-                        font-size: 0.9rem;
-                        // left: calc(-#{$Menu-width} - 5px);
-
-                        left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
-
-                        @media (min-width: 768px) {
-                            left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
-                        }
-                    }
-
-                    @media (min-width: 576px) {
-
-                        strong {
-                            font-weight: 550;
-                        }
-                    }
-
-                    @media (min-width: 768px) {
-
-                        strong {
+                        :first-child {
+                            position: fixed;
+                            display: block;
+                            width: #{$Menu-width};
+                            top: calc(((100vh / #{$burger-height-factor}) * 6.5) - 0.9rem);
+                            font-family: "roboto", sans-serif;
                             font-size: 1.25rem;
+                            font-weight: 350;
+                            height: fit-content;
+                            text-align: center;
+                            color: #{$bm-text-main};
+
+                            @media (min-width: 1200px) {
+                                width: 300px;
+                            }
+                        }
+                    }
+
+                    @media (min-height: 360px) {
+
+                        :first-child {
+                            :first-child {
+                                font-size: 1.6rem;
+
+                                @media (min-width: 1200px) {
+                                    width: 300px;
+                                }
+                            }
+                        }
+                    }
+
+                    @media (min-height: 720px) {
+
+                        :first-child {
+                            :first-child {
+                                font-size: 2.1rem;
+                                top: calc(((100vh / #{$burger-height-factor}) * 6.5) - 1.9rem);
+
+                                @media (min-width: 1200px) {
+                                    width: 300px;
+                                }
+                            }
+                        }
+                    }
+
+                    @media (min-height: 1080px) {
+
+                        :first-child {
+                            :first-child {
+                                font-size: 2.5rem;
+                                top: calc(((100vh / #{$burger-height-factor}) * 6.25) - 1.25rem);
+
+                                @media (min-width: 1200px) {
+                                    width: 300px;
+                                }
+                            }
+                        }
+                    }
+
+                    :nth-child(2) {                                                             // Contact Me Email Icon defaults and responsive behaviour
+                        display: block;
+                        position: fixed;
+
+                        :first-child {
+                            display: block;
+                            position: fixed;
+                            width: 2rem;
+                            height: 2rem;
+                            left: calc(50px - 1rem);
+                            top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 0.85rem);
+
+                            @media (min-width: 1200px) {
+                                left: calc(100px - 0.65rem);
+                            }
+                        }
+
+                        @media (min-height: 360px) {
+
+                        :first-child {
+                                top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 1.2rem);
+                                width: 3rem;
+                                height: 3rem;
+                                left: calc(50px - 1.85rem);
+
+                                @media (min-width: 1200px) {
+                                    left: calc(100px - 1.85rem);
+                                }
+                            }
+                        }
+
+                        @media (min-height: 720px) {
+
+                        :first-child  {
+                                top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 1.6rem);
+                                width: 3.5rem;
+                                height: 3.5rem;
+                                left: calc(50px - 2.3rem);
+
+                                @media (min-width: 1200px) {
+                                    top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 2.5rem);
+                                    width: 5rem;
+                                    height: 5rem;
+                                    left: calc(100px - 3rem);
+                                }
+                            }
+                        }
+
+                        @media (min-height: 1080px) {
+
+                        :first-child  {
+                                top: calc(((100vh / #{$burger-height-factor}) * 6.725));
+                                width: 5rem;
+                                height: 5rem;
+                                left: calc(75px - 2.5rem);
+
+                                @media (min-width: 1200px) {
+                                    top: calc(((100vh / #{$burger-height-factor}) * 6.475));
+                                    left: calc(150px - 3.5rem);
+                                    width: 7rem;
+                                    height: 7rem;
+                                }
+                            }
+                        }
+
+                        
+                        :nth-child(2) {                                                         // Contact SMS Icon defaults and responsive behaviour
+                            display: block;
+                            position: fixed;
+                            width: 2rem;
+                            height: 2rem;
+                            left: calc(100px - 1rem);
+                            top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 0.85rem);
+
+                            @media (min-width: 1200px) {
+                                left: calc(200px - 1.35rem);
+                            }
+                        }
+
+                        @media (min-height: 360px) {
+
+                            :nth-child(2) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 1.2rem);
+                                width: 3rem;
+                                height: 3rem;
+                                left: calc(100px - 1rem);
+
+                                @media (min-width: 1200px) {
+                                    left: calc(200px - 1.15rem);
+                                }
+                            }
+                        }
+
+                        @media (min-height: 720px) {
+
+                            :nth-child(2) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 1.6rem);
+                                width: 3.5rem;
+                                height: 3.5rem;
+                                left: calc(100px - 0.75rem);
+
+                                @media (min-width: 1200px) {
+                                    top: calc(((100vh / #{$burger-height-factor}) * 7.25) - 2.5rem);
+                                    width: 5rem;
+                                    height: 5rem;
+                                    left: calc(200px - 2rem);
+                                }
+                            }
+                        }
+
+                        @media (min-height: 1080px) {
+
+                            :nth-child(2) {
+                                top: calc(((100vh / #{$burger-height-factor}) * 6.8) + 4.5rem);
+                                width: 5rem;
+                                height: 5rem;
+                                left: calc(75px - 2.5rem);
+
+                                @media (min-width: 1200px) {
+                                    top: calc(((100vh / #{$burger-height-factor}) * 6.8) + 3.5rem);
+                                    left: calc(150px - 3.5rem);
+                                    width: 7rem;
+                                    height: 7rem;
+                                }
+                            }
                         }
                     }
                 }
 
-                :nth-child(13) {
-                    z-index: 2;
-                    display: flex;
-                    align-items: center;
-                    border-color: transparent;
-                    background-color: transparent;
-                    height: 32px;
-                    top: calc(#{$burger-v-offset} + ((100% / #{$burger-spacing-factor}) * 5) + 1.1rem + (1.75rem * ((100vh - 280px) / 370px)));
-                    // transition: left 0.1s linear;
-                    width: calc(#{$Menu-width} - 1.25rem);
-                    padding-left: 0.625rem;
-                    opacity: 85%;
-                    left: #{$bm-side-gap};
-
-
-                }
             }
         }
 
-        &:hover {        
+        &:hover {                                                                               // Currently pops menu up on hover. Needs js to make it a toggle
 
             .burger-menu-wrapper {
                 display: block;
-
-            //     div, a {
-            //         left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
-            //     }
-
-            //     :nth-child(12) {
-            //         left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
-
-            //         strong {
-            //             left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
-
-            //             @media (min-width: 768px) {
-            //                 left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
-            //             }
-            //         }
-            //     }
-
-            //     :nth-child(13) {
-            //         left: calc(2px + #{$bm-side-gap});
-            //     }
             }
         }
-        
 
-
-        @media (max-width: 575.999px) {
+        @media (max-width: 575.999px) {                                                         // Hides menu under 576px width
 
             .burger-menu-wrapper {
                     display: none;
-            }
-
-            #{$bm-menu-mode}: none;
-        }
-
-        @media (min-width: 576px) {
-
-            .burger-menu-wrapper {
-
-                div, a {
-                    left: #{$bm-side-gap}; // make visible gap on left of menu with positive values
-                }
-
-                :nth-child(12) {
-                    left: calc((#{$Menu-width} / 2) - 46px + #{$bm-side-gap});
-
-                    strong {
-                        left: calc((#{$Menu-width} / 2) - 43px + #{$bm-side-gap});
-
-                        @media (min-width: 768px) {
-                            left: calc((#{$Menu-width} / 2) - 62px + #{$bm-side-gap});
-                        }
-                    }
-                }
-
-                :nth-child(13) {
-                    left: calc(2px + #{$bm-side-gap});
-                }
-
             }
         }
 
